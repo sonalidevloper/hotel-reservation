@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Now - HBS</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <!-- Left Side Logo -->
+            <a href="index.html" class="navbar-logo">
+                <img src="./assets/logo.png" alt="Hotel Logo" />
+            </a>
+            
+            <!-- Right Side Menu -->
+            <ul class="navbar-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="rooms.html" class="active">Rooms</a></li>
+                <li><a href="contact-us.html">Contact Us</a></li>
+                <li><a id="logoutBtn">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+      <!-- Booking Form -->
+      <div class="booking-container">
+        <div class="booking-header">
+            <h1>Book Your Stay</h1>
+        </div>
+        <form class="booking-form" id="bookingForm">
+            <label for="room">Room Type:</label>
+            <select id="room" name="room">
+                <option value="standard" data-price="80">Standard Room - 800 /- night</option>
+                <option value="deluxe" data-price="120">Deluxe Room - 1200 /- night</option>
+                <option value="suite" data-price="200">Suite Room - 2000/- night</option>
+            </select>
+
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your full name" required />
+
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email address" required />
+
+            <label for="checkin">Check-in Date:</label>
+            <input type="date" id="checkin" name="checkin" required />
+
+            <label for="checkout">Check-out Date:</label>
+            <input type="date" id="checkout" name="checkout" required />
+
+            <div class="payment-details" id="paymentDetails" style="display: none;">
+                <h3>Payment Details</h3>
+                <p id="roomType"></p>
+                <p id="numNights"></p>
+                <p id="totalCost"></p>
+            </div>
+
+            <button type="submit">Confirm Booking</button>
+        </form>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        &copy; 2024 Hotel Booking. All Rights Reserved.
+    </footer>
+
+    <script src="index.js"></script>
+</body>
+</html>
