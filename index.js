@@ -84,7 +84,7 @@ if(bookingForm) {
                 (checkoutDate - checkinDate) / (1000 * 60 * 60 * 24)
             );
             const roomPrice = parseFloat(roomSelect.selectedOptions[0].dataset.price);
-            const total = nights * roomPrice;
+            const total = (nights * roomPrice)*10;
     
             roomType.textContent = `Room Type: ${roomSelect.selectedOptions[0].text}`;
             numNights.textContent = `Number of Nights: ${nights}`;
@@ -105,9 +105,7 @@ if(bookingForm) {
 
 const contactForm = document.getElementById('contactForm');
 
-// Check if contact form exists
 if (contactForm) {
-    // Add event listener to contact form
     contactForm.addEventListener('submit', function (e) {
         e.preventDefault();
 
@@ -118,8 +116,7 @@ if (contactForm) {
 
         if (name && email && subject && message) {
             alert('Your message has been sent. Thank you!');
-            // Here, you would normally send the form data to your server
-            contactForm.reset(); // Clear the form
+            contactForm.reset();
         } else {
             alert('Please fill out all fields.');
         }
