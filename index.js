@@ -2,8 +2,8 @@
 window.onload = function() {
     if (localStorage.getItem('isLoggedIn') === 'true') return
     else {
-        if (window.location.pathname === '/index.html' || window.location.pathname == '/register.html') return
-        window.location.href = 'index.html';
+        if (window.location.pathname === '/login.html' || window.location.pathname === '/register.html') return
+        window.location.href = 'login.html';
     }
     
 }
@@ -53,7 +53,7 @@ if (registrationForm) {
         if (fullName && email && mobile && password && confirmPassword) {
             alert('Registration Successful! Please login to continue.');
             registrationForm.reset();
-            window.location.href = 'index.html';
+            window.location.href = 'login.html';
         } else {
             alert('Please fill in all fields.');
         }
@@ -64,7 +64,7 @@ const logoutButton = document.getElementById('logoutBtn');
 if(logoutButton) {
     logoutButton.addEventListener('click', function() {
         localStorage.removeItem('isLoggedIn');
-        window.location.href = 'index.html';
+        window.location.href = 'login.html';
     });
 }
 
