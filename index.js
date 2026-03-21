@@ -2,7 +2,8 @@
 window.onload = function() {
     if (localStorage.getItem('isLoggedIn') === 'true') return
     else {
-        if (window.location.pathname === '/login.html' || window.location.pathname === '/register.html') return
+        const path = window.location.pathname;
+        if (path.endsWith('/login.html') || path.endsWith('/register.html') || path.endsWith('/index.html') || path === '/') return
         window.location.href = 'login.html';
     }
     
