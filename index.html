@@ -22,5 +22,10 @@
             </div>
         </div>
     </div>
+    <script>
+        if (localStorage.getItem('isLoggedIn') === 'true') {
+            window.location.href = 'home.html';
+        }
+    </script>
 </body>
 </html>
