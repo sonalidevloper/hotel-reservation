@@ -53,7 +53,7 @@ if (registrationForm) {
         if (fullName && email && mobile && password && confirmPassword) {
             alert('Registration Successful! Please login to continue.');
             registrationForm.reset();
-           
+            window.location.href = 'login.html';
         } else {
             alert('Please fill in all fields.');
         }
