@@ -2,8 +2,7 @@
 window.onload = function() {
     if (localStorage.getItem('isLoggedIn') === 'true') return
     else {
-        if (window.location.pathname === '/index.html' || window.location.pathname == '/register.html') return
-        window.location.href = 'index.html';
+        
     }
     
 }
