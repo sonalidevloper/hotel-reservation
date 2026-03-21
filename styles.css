@@ -1,9 +1,20 @@
 /* Global Styles */
+:root {
+    --navy: #1b2a4a;
+    --gold: #c9a84c;
+    --gold-hover: #b8943d;
+    --teal: #2e7d7d;
+    --teal-hover: #246666;
+    --light-bg: #f5f1eb;
+    --text-dark: #2c2c2c;
+    --text-muted: #5a5a5a;
+}
+
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Arial, sans-serif;
     line-height: 1.6;
-    color: #333;
+    color: var(--text-dark);
 }
 
 img {
@@ -11,16 +22,15 @@ img {
     display: block;
 }
 
-
 /* General Navbar Styling */
 .navbar {
-    background-color: #fff;
-    color: #333;
+    background-color: var(--navy);
+    color: #f0f0f0;
     padding: 1em 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 .navbar-container {
@@ -51,14 +61,14 @@ img {
 
 .navbar-menu li a {
     text-decoration: none;
-    color: #333;
+    color: #e0e0e0;
     padding: 5px 10px;
-    transition: background-color 0.3s;
+    transition: color 0.3s;
     cursor: pointer;
 }
 
 .navbar-menu li a:hover, .navbar-menu li a.active {
-    color: #f6cc43;
+    color: var(--gold);
 }
 
 /* Login Page Styles */
@@ -66,9 +76,9 @@ img {
 /* Login Container */
 .login-container {
     background-color: #fff;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.15);
     padding: 40px;
-    border-radius: 8px;
+    border-radius: 12px;
     width: 100%;
     max-width: 400px;
     text-align: center;
@@ -90,12 +100,13 @@ img {
 /* Title and Subtitle */
 .login-title {
     font-size: 24px;
-    font-weight: 600;
+    font-weight: 700;
+    color: var(--navy);
     margin-bottom: 10px;
 }
 
 .login-subtitle {
-    color: #555;
+    color: var(--text-muted);
     font-size: 16px;
     margin-bottom: 20px;
 }
@@ -108,7 +119,7 @@ img {
 
 .input-label {
     font-size: 14px;
-    color: #555;
+    color: var(--text-muted);
     margin-bottom: 5px;
     display: block;
 }
@@ -117,32 +128,36 @@ img {
     width: -webkit-fill-available;
     padding: 12px;
     border: 1px solid #ccc;
-    border-radius: 4px;
+    border-radius: 6px;
     font-size: 16px;
-    color: #333;
+    color: var(--text-dark);
     background-color: #f7f7f7;
+    transition: border-color 0.3s;
 }
 
 .input-field:focus {
     outline: none;
-    border-color: #f6cc6d;
+    border-color: var(--teal);
+    background-color: #fff;
 }
 
 /* Login Button */
 .login-btn {
     width: 100%;
     padding: 14px;
-    background-color: #f6cc6d;
+    background: linear-gradient(135deg, var(--gold) 0%, var(--teal) 100%);
     color: white;
     font-size: 16px;
+    font-weight: 600;
     border: none;
-    border-radius: 4px;
+    border-radius: 6px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: opacity 0.3s ease, transform 0.2s ease;
 }
 
 .login-btn:hover {
-    background-color: #f3bf45;
+    opacity: 0.9;
+    transform: translateY(-2px);
 }
 
 /* Register Link */
@@ -152,12 +167,100 @@ img {
 }
 
 .register-link a {
-    color: #f6cc6d;
+    color: var(--teal);
     text-decoration: none;
+    font-weight: 600;
 }
 
 .register-link a:hover {
     text-decoration: underline;
+}
+
+/* Welcome Page Styles */
+.welcome-page {
+    min-height: 100vh;
+    background: url('./assets/hero.jpg') no-repeat center center/cover;
+}
+
+.welcome-overlay {
+    min-height: 100vh;
+    background: linear-gradient(135deg, rgba(27, 42, 74, 0.88) 0%, rgba(46, 125, 125, 0.75) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.welcome-content {
+    color: #fff;
+    padding: 2rem;
+    max-width: 700px;
+}
+
+.welcome-logo {
+    width: 120px;
+    margin: 0 auto 1.5rem;
+    border-radius: 50%;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.welcome-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+    letter-spacing: 1px;
+}
+
+.welcome-tagline {
+    font-size: 1.3rem;
+    color: #f0d080;
+    margin-bottom: 3rem;
+    font-style: italic;
+}
+
+.welcome-buttons {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-welcome {
+    padding: 14px 44px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+}
+
+.btn-login {
+    background: var(--gold);
+    color: #fff;
+    border: 2px solid var(--gold);
+}
+
+.btn-login:hover {
+    background: var(--gold-hover);
+    border-color: var(--gold-hover);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(201, 168, 76, 0.45);
+}
+
+.btn-register {
+    background: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+}
+
+.btn-register:hover {
+    background: #fff;
+    color: var(--navy);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(255, 255, 255, 0.3);
 }
 
 /* Home Page Styles */
@@ -179,12 +282,13 @@ img {
     align-items: center;
     width: 100%;
     height: 100%;
-    background: #0f0f0f52;
+    background: linear-gradient(135deg, rgba(27, 42, 74, 0.7) 0%, rgba(0, 0, 0, 0.4) 100%);
 }
 
 .hero-content h1 {
     font-size: 3rem;
     margin: 0;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
 }
 
 .hero-content p {
@@ -195,29 +299,35 @@ img {
 .hero-content .btn {
     display: inline-block;
     margin-top: 1rem;
-    background: #f6cc6d;
+    background: var(--gold);
     color: #fff;
-    padding: 10px 20px;
+    padding: 12px 28px;
     border: none;
-    border-radius: 5px;
+    border-radius: 50px;
     text-decoration: none;
     font-size: 1rem;
+    font-weight: 600;
     cursor: pointer;
-    transition: background 0.3s;
+    transition: all 0.3s;
 }
 
 .hero-content .btn:hover {
-    background: #f3bf45;
+    background: var(--gold-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(201, 168, 76, 0.4);
 }
 
 /* Featured Rooms Section */
 .featured-rooms {
-    padding: 2rem 1rem;
+    padding: 3rem 1rem;
     text-align: center;
+    background: var(--light-bg);
 }
 
 .featured-rooms h2 {
     margin-bottom: 1.5rem;
+    font-size: 2rem;
+    color: var(--navy);
 }
 
 .room-cards {
@@ -228,15 +338,17 @@ img {
 
 .room-card {
     max-width: 300px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+    border: 1px solid #e0d8cc;
+    border-radius: 10px;
     overflow: hidden;
     text-align: center;
-    transition: transform 0.3s;
+    transition: transform 0.3s, box-shadow 0.3s;
+    background: #fff;
 }
 
 .room-card:hover {
     transform: scale(1.05);
+    box-shadow: 0 8px 24px rgba(27, 42, 74, 0.15);
 }
 
 .room-card img {
@@ -246,17 +358,20 @@ img {
 
 .room-card h3 {
     margin: 0.5rem 0;
+    color: var(--navy);
 }
 
 /* About Us Section */
 .about-us {
-    padding: 2rem 1rem;
+    padding: 3rem 1rem;
     text-align: center;
-    background: #f9f9f9;
+    background: #fff;
 }
 
 .about-us h2 {
     margin-bottom: 1rem;
+    font-size: 2rem;
+    color: var(--navy);
 }
 
 .about-us-content {
@@ -274,36 +389,39 @@ img {
 
 .about-us p {
     font-size: 1rem;
-    line-height: 1.5;
+    line-height: 1.6;
     margin: 1rem 0;
+    color: var(--text-muted);
 }
 
 .about-us .btn {
     display: inline-block;
     margin-top: 1rem;
-    background: #f6cc6d;
+    background: var(--teal);
     color: #fff;
-    padding: 10px 20px;
+    padding: 12px 28px;
     border: none;
-    border-radius: 5px;
+    border-radius: 50px;
     text-decoration: none;
     font-size: 1rem;
+    font-weight: 600;
     cursor: pointer;
-    transition: background 0.3s;
+    transition: all 0.3s;
 }
 
 .about-us .btn:hover {
-    background: #f3bf45;
+    background: var(--teal-hover);
+    transform: translateY(-2px);
 }
 
 /* About Page Styles */
 
 /* Header */
 .about-header {
-    background: #f6cc6d;
+    background: linear-gradient(135deg, var(--navy) 0%, var(--teal) 100%);
     color: #fff;
     text-align: center;
-    padding: 2rem 1rem;
+    padding: 3rem 1rem;
 }
 
 .about-header h1 {
@@ -313,6 +431,7 @@ img {
 
 .about-header p {
     font-size: 1.2rem;
+    color: #f0d080;
 }
 
 /* About Section */
@@ -334,6 +453,7 @@ img {
     width: 100%;
     height: auto;
     border-radius: 10px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
 }
 
 .about-text {
@@ -343,22 +463,24 @@ img {
 .about-text h2 {
     font-size: 2rem;
     margin-bottom: 1rem;
+    color: var(--navy);
 }
 
 .about-text p {
     font-size: 1rem;
     line-height: 1.6;
     margin-bottom: 1rem;
+    color: var(--text-muted);
 }
 
 /* Rooms Page Styles */
 
 /* Header */
 .rooms-header {
-    background: #f6cc6d;
+    background: linear-gradient(135deg, var(--navy) 0%, var(--teal) 100%);
     color: #fff;
     text-align: center;
-    padding: 2rem 1rem;
+    padding: 3rem 1rem;
 }
 
 .rooms-header h1 {
@@ -368,6 +490,7 @@ img {
 
 .rooms-header p {
     font-size: 1.2rem;
+    color: #f0d080;
 }
 
 /* Rooms Section */
@@ -383,12 +506,13 @@ img {
 
 .room-card {
     width: 300px;
-    border: 1px solid #ddd;
+    border: 1px solid #e0d8cc;
     border-radius: 10px;
     overflow: hidden;
     text-align: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
     transition: transform 0.3s, box-shadow 0.3s;
+    background: #fff;
 }
 
 .room-card img {
@@ -400,32 +524,34 @@ img {
 .room-card h2 {
     font-size: 1.5rem;
     margin: 1rem 0 0.5rem;
+    color: var(--navy);
 }
 
 .room-card p {
     font-size: 1rem;
     margin: 0.5rem 1rem;
-    color: #555;
+    color: var(--text-muted);
 }
 
 .room-card .price {
     display: block;
     font-size: 1.2rem;
     font-weight: bold;
-    color: #f6cc6d;
+    color: var(--teal);
     margin: 0.5rem 0;
 }
 
 .room-card .btn {
-    background: #f6cc6d;
+    background: var(--gold);
     color: #fff;
-    padding: 0.25rem 1rem;
+    padding: 0.4rem 1.2rem;
     border: none;
-    border-radius: 5px;
+    border-radius: 50px;
     font-size: 1rem;
+    font-weight: 600;
     cursor: pointer;
     margin-bottom: 1rem;
-    transition: background 0.3s;
+    transition: all 0.3s;
     text-decoration: none;
     display: block;
     width: fit-content;
@@ -435,28 +561,28 @@ img {
 }
 
 .room-card .btn:hover {
-    background: #f3bf45;
+    background: var(--gold-hover);
+    transform: translateY(-2px);
 }
 
 .room-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 24px rgba(27, 42, 74, 0.15);
 }
 
  /* Book Now Page Styles */
-
  .booking-container {
     max-width: 800px;
     margin: 40px auto;
     background: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
     overflow: hidden;
 }
 
 .booking-header {
-    background: #f6cc6d;
-    padding: 20px;
+    background: linear-gradient(135deg, var(--navy) 0%, var(--teal) 100%);
+    padding: 24px;
     text-align: center;
     color: #fff;
 }
@@ -474,7 +600,7 @@ img {
     display: block;
     margin-bottom: 8px;
     font-weight: bold;
-    color: #333;
+    color: var(--navy);
 }
 
 .booking-form input, 
@@ -483,61 +609,68 @@ img {
     padding: 10px;
     margin-bottom: 20px;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 6px;
     font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.booking-form input:focus,
+.booking-form select:focus {
+    outline: none;
+    border-color: var(--teal);
 }
 
 .payment-details {
-    background: #f5f5f5;
+    background: var(--light-bg);
     padding: 20px;
     margin: 20px 0;
-    border-radius: 5px;
+    border-radius: 8px;
+    border-left: 4px solid var(--gold);
 }
 
 .payment-details h3 {
     margin-top: 0;
     font-size: 1.5rem;
-    color: #f6cc6d;
+    color: var(--navy);
 }
 
 .payment-details p {
     margin: 8px 0;
     font-size: 1rem;
-    color: #555;
+    color: var(--text-muted);
 }
-
 
 .booking-form button {
     width: 100%;
     padding: 15px;
-    background: #f6cc6d;
+    background: linear-gradient(135deg, var(--gold) 0%, var(--teal) 100%);
     border: none;
-    border-radius: 5px;
+    border-radius: 6px;
     font-size: 1rem;
     font-weight: bold;
     color: #fff;
     cursor: pointer;
-    transition: background 0.3s ease;
+    transition: opacity 0.3s ease, transform 0.2s ease;
 }
 
 .booking-form button:hover {
-    background: #f3bf45;
+    opacity: 0.9;
+    transform: translateY(-2px);
 }
 
 /* Contact Page Styles */
-
 .contact-container {
     max-width: 800px;
     margin: 40px auto;
     background: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
     overflow: hidden;
 }
 
 .contact-header {
-    background: #f6cc6d;
-    padding: 20px;
+    background: linear-gradient(135deg, var(--navy) 0%, var(--teal) 100%);
+    padding: 24px;
     text-align: center;
     color: #fff;
 }
@@ -555,7 +688,7 @@ img {
     display: block;
     margin-bottom: 8px;
     font-weight: bold;
-    color: #333;
+    color: var(--navy);
 }
 
 .contact-form input, 
@@ -564,41 +697,48 @@ img {
     padding: 10px;
     margin-bottom: 20px;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 6px;
     font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--teal);
 }
 
 .contact-form button {
     width: 100%;
     padding: 15px;
-    background: #f6cc6d;
+    background: linear-gradient(135deg, var(--gold) 0%, var(--teal) 100%);
     border: none;
-    border-radius: 5px;
+    border-radius: 6px;
     font-size: 1rem;
     font-weight: bold;
     color: #fff;
     cursor: pointer;
-    transition: background 0.3s ease;
+    transition: opacity 0.3s ease, transform 0.2s ease;
 }
 
 .contact-form button:hover {
-    background: #f3bf45;
+    opacity: 0.9;
+    transform: translateY(-2px);
 }
 
 /* Registration Page Styles */
-
 .registration-container {
     max-width: 800px;
     margin: 40px auto;
     background: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
     overflow: hidden;
 }
 
 .registration-header {
-    background: #f6cc6d;
-    padding: 20px;
+    background: linear-gradient(135deg, var(--navy) 0%, var(--teal) 100%);
+    padding: 24px;
     text-align: center;
     color: #fff;
 }
@@ -616,7 +756,7 @@ img {
     display: block;
     margin-bottom: 8px;
     font-weight: bold;
-    color: #333;
+    color: var(--navy);
 }
 
 .registration-form input {
@@ -624,33 +764,41 @@ img {
     padding: 10px;
     margin-bottom: 8px;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 6px;
     font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.registration-form input:focus {
+    outline: none;
+    border-color: var(--teal);
 }
 
 .registration-form button {
     width: 100%;
     padding: 15px;
-    background: #f6cc6d;
+    background: linear-gradient(135deg, var(--gold) 0%, var(--teal) 100%);
     border: none;
-    border-radius: 5px;
+    border-radius: 6px;
     font-size: 1rem;
     font-weight: bold;
     color: #fff;
     cursor: pointer;
-    transition: background 0.3s ease;
+    transition: opacity 0.3s ease, transform 0.2s ease;
 }
 
 .registration-form button:hover {
-    background: #f3bf45;
+    opacity: 0.9;
+    transform: translateY(-2px);
 }
 
 
 /* Footer */
 .footer {
     text-align: center;
-    background: #333;
-    color: #fff;
-    padding: 1rem;
+    background: var(--navy);
+    color: #b0bbd4;
+    padding: 1.5rem;
     margin-top: 2rem;
+    font-size: 0.95rem;
 }
