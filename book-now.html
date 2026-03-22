@@ -25,24 +25,26 @@
             </ul>
         </div>
     </nav>
-      <!-- Booking Form -->
-      <div class="booking-container">
+
+    <!-- Booking Form -->
+    <div class="booking-container">
         <div class="booking-header">
             <h1>Book Your Stay</h1>
         </div>
         <form class="booking-form" id="bookingForm">
             <label for="room">Room Type:</label>
+            <!-- ✅ FIX: data-price now stores actual room price (no *10 hack) -->
             <select id="room" name="room">
-                <option value="standard" data-price="80">Standard Room - 800 /- night</option>
-                <option value="deluxe" data-price="120">Deluxe Room - 1200 /- night</option>
-                <option value="suite" data-price="200">Suite Room - 2000/- night</option>
-            </select>
-            <label for="bed">Bed Type:</label>
-            <select id="bed" name="bed">
-                <option value="single" >Single Bed</option>
-                <option value="double">Double Bed</option>
+                <option value="standard" data-price="800">Standard Room - ₹800 /- night</option>
+                <option value="deluxe"   data-price="1200">Deluxe Room - ₹1200 /- night</option>
+                <option value="suite"    data-price="2000">Suite Room - ₹2000 /- night</option>
             </select>
 
+            <label for="bed">Bed Type:</label>
+            <select id="bed" name="bed">
+                <option value="single">Single Bed</option>
+                <option value="double">Double Bed</option>
+            </select>
 
             <label for="name">Full Name:</label>
             <input type="text" id="name" name="name" placeholder="Enter your full name" required />
