@@ -21,9 +21,14 @@ if(loginForm) {
         const mobile = document.getElementById('mobile').value;
         const password = document.getElementById('password').value;
 
-        if (validMobileNumbers.includes(mobile) && password === validPassword) {
-            window.location.href = 'home.html';
+        const registeredUsers = JSON.parse(localStorage.getItem('registeredUsers') || '[]');
+        const registeredUser = registeredUsers.find(function(user) {
+            return user.mobile === mobile && user.password === password;
+        });
+
+        if (registeredUser || (validMobileNumbers.includes(mobile) && password === validPassword)) {
             localStorage.setItem('isLoggedIn', 'true');
+            window.location.href = 'home.html';
         } else {
             alert('Invalid login credentials');
         }
@@ -43,14 +48,20 @@ if (registrationForm) {
         const password = document.getElementById('password').value;
         const confirmPassword = document.getElementById('confirmPassword').value;
 
-        console.log({ password, confirmPassword });
-
         if (password !== confirmPassword) {
             alert('Passwords do not match!');
             return;
         }
 
         if (fullName && email && mobile && password && confirmPassword) {
+            const registeredUsers = JSON.parse(localStorage.getItem('registeredUsers') || '[]');
+            const existingUser = registeredUsers.find(function(user) { return user.mobile === mobile; });
+            if (existingUser) {
+                alert('An account with this mobile number already exists. Please login.');
+                return;
+            }
+            registeredUsers.push({ fullName: fullName, email: email, mobile: mobile, password: password });
+            localStorage.setItem('registeredUsers', JSON.stringify(registeredUsers));
             alert('Registration Successful! Please login to continue.');
             registrationForm.reset();
             window.location.href = 'login.html';
