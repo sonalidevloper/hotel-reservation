@@ -1,6 +1,6 @@
 /* Global Styles */
 :root {
-    --navy: #1b2a4a;
+    --navy: #04112b;
     --gold: #c9a84c;
     --gold-hover: #b8943d;
     --teal: #2e7d7d;
@@ -801,4 +801,50 @@ img {
     padding: 1.5rem;
     margin-top: 2rem;
     font-size: 0.95rem;
+}
+/* ===== BOOKING PAGE BACKGROUND ===== */
+.booking-page {
+    background: url('./assets/hero.jpg') no-repeat center center/cover;
+    min-height: 100vh;
+    position: relative;
+}
+
+/* Dark overlay */
+.booking-page::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(4, 17, 43, 0.75);
+    z-index: 0;
+}
+
+/* Ensure content stays above overlay */
+.booking-page * {
+    position: relative;
+    z-index: 1;
+}
+
+/* ===== HERO SECTION ===== */
+.booking-hero {
+    text-align: center;
+    color: #fff;
+    padding: 60px 20px;
+}
+
+.booking-hero h1 {
+    font-size: 2.8rem;
+    margin-bottom: 10px;
+}
+
+.booking-hero p {
+    color: #f0d080;
+}
+
+/* ===== BOOKING FORM ===== */
+.booking-container {
+    max-width: 600px;
+    margin: 40px auto;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 12px;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.2);
 }
