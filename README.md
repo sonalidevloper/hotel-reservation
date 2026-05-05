@@ -129,4 +129,6 @@ Protected pages automatically redirect unauthenticated users to `login.html`.
 
 This project is open source and available under the [MIT License](LICENSE).
 
+## 📄 License
 
+This project is open source and available under the [MIT License](LICENSE).
