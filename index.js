@@ -150,3 +150,23 @@ if (bookingForm) {
     });
 }
 
+// ─── Contact Form ─────────────────────────────────────────────────────────────
+var contactForm = document.getElementById('contactForm');
+if (contactForm) {
+
+    contactForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        var name    = document.getElementById('name').value.trim();
+        var email   = document.getElementById('email').value.trim();
+        var subject = document.getElementById('subject').value.trim();
+        var message = document.getElementById('message').value.trim();
+
+        if (name && email && subject && message) {
+            alert('Your message has been sent. Thank you!');
+            contactForm.reset();
+        } else {
+            alert('Please fill out all fields.');
+        }
+    });
+}
