@@ -5,11 +5,7 @@ window.onload = function () {
 
     var path = window.location.pathname;
 
-    // Pages allowed WITHOUT login
-    var publicPages = ['/index.html', '/login.html', '/register.html', '/'];
-    var isPublic = publicPages.some(function (p) {
-        return path === p || path.endsWith(p);
-    });
+    
 
     if (isPublic) return; // public page — let it load normally
 
