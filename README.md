@@ -123,6 +123,3 @@ Protected pages automatically redirect unauthenticated users to `login.html`.
 
 **Sonali** — [@sonalidevloper](https://github.com/sonalidevloper)
 
----
-
-This project is open source and available under the [MIT License](LICENSE).
